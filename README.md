@@ -9,6 +9,8 @@ To use this widget, simply open the index.html file in your web browser. The tab
 
 ## Features
 
-    -The flight details are stored in a Javascript array, making it easy to add, remove or modify flights.
-    -The flight details are dynamically generated using Javascript and displayed in a table using HTML and CSS.
-    -The flight details are animated with a flip effect using CSS.
+    - The flight details are stored in a Javascript array, making it easy to add, remove or modify flights.
+    
+    - The flight details are dynamically generated using Javascript and displayed in a table using HTML and CSS.
+    
+    - The flight details are animated with a flip effect using CSS.

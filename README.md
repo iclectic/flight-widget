@@ -54,7 +54,7 @@ flight-widget/
 
 ## Future Improvements
 
-- Add user authentication for personalized flight tracking
+- Add user authentication for personalised flight tracking
 - Implement geolocation for nearest airport detection
 - Add flight map visualization
 - Weather integration at departure/arrival locations

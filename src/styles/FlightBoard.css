@@ -1,0 +1,235 @@
+.flight-board {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.flight-board.dark {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.board-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 0 10px 0;
+}
+
+.flight-table-container {
+  overflow-x: auto;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #0056b3 transparent;
+}
+
+.flight-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.flight-table-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.flight-table-container::-webkit-scrollbar-thumb {
+  background-color: #0056b3;
+  border-radius: 20px;
+}
+
+.dark .flight-table-container::-webkit-scrollbar-thumb {
+  background-color: #66a6ff;
+}
+
+.flight-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  table-layout: fixed;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.flight-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.flight-table th {
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  background-color: #0056b3;
+  color: white;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable-header:hover {
+  background-color: #0062cc;
+}
+
+.dark .flight-table th {
+  background-color: #0c3a70;
+}
+
+.dark .sortable-header:hover {
+  background-color: #154b8a;
+}
+
+.flight-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s;
+}
+
+.dark .flight-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.flight-table tbody tr:hover td {
+  background-color: rgba(0, 86, 179, 0.05);
+}
+
+.dark .flight-table tbody tr:hover td {
+  background-color: rgba(0, 86, 179, 0.15);
+}
+
+/* Status styles */
+.status-on-time {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.status-delayed {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.status-boarding {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.status-landed, .status-arrived {
+  color: #17a2b8;
+  font-weight: 600;
+}
+
+.status-final-call, .status-gate-closed {
+  color: #e24c00;
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.loading-cell {
+  text-align: center;
+  padding: 3rem !important;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(0, 86, 179, 0.1);
+  border-left-color: #0056b3;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.dark .loading-spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-color: #66a6ff;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-cell p {
+  margin-top: 1rem;
+  color: #6c757d;
+}
+
+.dark .loading-cell p {
+  color: #adb5bd;
+}
+
+.error-container {
+  text-align: center;
+  padding: 2rem;
+  color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+  border-radius: 10px;
+  margin: 1rem;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.15);
+}
+
+.dark .error-container {
+  background: rgba(220, 53, 69, 0.2);
+}
+
+.no-results {
+  text-align: center;
+  font-style: italic;
+  color: #6c757d;
+  padding: 2rem !important;
+}
+
+.dark .no-results {
+  color: #adb5bd;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .flight-table th, .flight-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .flight-table th:nth-child(5), 
+  .flight-table td:nth-child(5) {
+    display: none;
+  }
+  
+  .board-controls {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .flight-table th, .flight-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .flight-table th:nth-child(6), 
+  .flight-table td:nth-child(6) {
+    display: none;
+  }
+}

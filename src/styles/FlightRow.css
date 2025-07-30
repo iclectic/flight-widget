@@ -1,0 +1,113 @@
+.flight-row {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.flight-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.dark .flight-row:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.flight-row:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0056b3;
+  position: relative;
+  z-index: 2;
+}
+
+.dark .flight-row:focus {
+  box-shadow: 0 0 0 2px #66a6ff;
+}
+
+.flight-time {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.airline-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.airline-code {
+  font-weight: 700;
+  color: #0056b3;
+  background-color: rgba(0, 86, 179, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.dark .airline-code {
+  color: #66a6ff;
+  background-color: rgba(102, 166, 255, 0.2);
+}
+
+.flight-number-digits {
+  font-weight: 600;
+}
+
+.airline-name {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+.dark .airline-name {
+  color: #adb5bd;
+}
+
+.flight-location {
+  font-weight: 500;
+}
+
+.flight-terminal, .flight-gate {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Flight status animations */
+.status-on-time {
+  position: relative;
+}
+
+.status-boarding::before,
+.status-final-call::before,
+.status-gate-closed::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.status-boarding::before {
+  background-color: #ffc107;
+  animation: pulse 2s infinite;
+}
+
+.status-final-call::before,
+.status-gate-closed::before {
+  background-color: #dc3545;
+  animation: fastPulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes fastPulse {
+  0% { opacity: 0.5; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.5; transform: scale(0.8); }
+}

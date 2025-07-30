@@ -1,16 +1,64 @@
-# Automatic Flight Widget
+# Real-Time Flight Information Board
 
-This is a Javascript-powered flight widget that displays a table of flights, their details, and remarks. The table is dynamically generated and automatically updated 
-every 5 seconds to show new flights, with the previous flights being removed.
+![Flight Board](./screenshot.png)
 
-## How to Use
-
-To use this widget, simply open the index.html file in your web browser. The table of flights will automatically start generating and updating every 5 seconds.
+A dynamic, real-time flight information display board built with modern web technologies. This project simulates an airport departure/arrival board with live updates and interactive features.
 
 ## Features
 
-- The flight details are stored in a Javascript array, making it easy to add, remove or modify flights.
-    
-- The flight details are dynamically generated using Javascript and displayed in a table using HTML and CSS.
-    
-- The flight details are animated with a flip effect using CSS.
+- ✈️ Real-time flight information updates
+- 🔍 Flight search and filtering
+- 🔔 Flight status notifications
+- 📱 Fully responsive design
+- 🌙 Dark/Light mode
+- 🧪 Comprehensive test coverage
+
+## Technologies Used
+
+- React
+- CSS3 with Flexbox/Grid
+- Custom animations
+- Responsive design principles
+- Server-side integration
+
+## Installation & Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Run tests
+npm run test
+```
+
+## Project Structure
+
+```
+flight-widget/
+├── src/
+│   ├── components/
+│   ├── hooks/
+│   ├── services/
+│   ├── utils/
+│   └── App.jsx
+├── public/
+├── tests/
+└── ...
+```
+
+## Future Improvements
+
+- Add user authentication for personalized flight tracking
+- Implement geolocation for nearest airport detection
+- Add flight map visualization
+- Weather integration at departure/arrival locations
+
+## License
+
+MIT
